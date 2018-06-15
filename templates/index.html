@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gimme</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<style>
+
+    body
+    {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .question
+    {
+        height: 15vh;
+    }
+
+
+</style>
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-8" style="height: 15vh;">
+            <h3 style="padding-top: 25px; color: red;">Gimme</h3>
+        </div>
+
+        <div class="col-4" style="height: 15vh;">
+            <label for="repository" style="color: black; padding-top: 5px;">Search:</label>
+            <input class="form-control" aria-label="Search:" name="project" id="repository" placeholder="Ex. best free tool for graphic design?" style="width: 100%;">
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="col-12" style="text-align: center;">
+            <i class="fas fa-compass" style="font-size: 120px; color: red;"></i>
+            <br>
+            <br>
+            <h3>Find what you're looking for.</h3>
+            <p>Tell the community what you are looking for and they will find it!</p>
+        </div>
+
+        <div class="col-4"></div>
+
+        <div class="col-2" style="height: 10vh;">
+            <button class="btn btn-danger" style="height: 100%; width: 100%" onclick=window.location.href='{{ url_for('newmessage') }}';>Find something</button>
+        </div>
+
+        <div class="col-2" style="height: 10vh;">
+            <button class="btn btn-danger" style="height: 100%; width: 100%;" onclick=window.location.href='{{ url_for("getfeed") }}';>Suggest something</button>
+        </div>
+
+        <div class="col-4"></div>
+
+        <div class="col-1" style=""></div>
+
+        <div class="col-10">
+            <div style="height: 5vh;"></div>
+            <div style="background-color: white; max-height: 150vh; overflow-y: scroll;">
+
+                <div style="height: 5vh;">
+
+                </div>
+
+                {{ postvar|safe }}
+
+            </div>
+
+        </div>
+
+        <div class="col-1" style=""></div>
+
+        <div class="col-12" style="background-color: white; color: black; height: 10vh;">
+            <p style="position: absolute; top: 10px; right: 10px; font-family: 'Times New Roman';">Made with <em style="color: red;">&hearts;</em> in Fort Worth, TX</p>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
